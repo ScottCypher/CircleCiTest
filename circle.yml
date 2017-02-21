@@ -19,7 +19,7 @@ test:
     # wait for it to have booted
     - circle-android wait-for-boot
     # run tests  against the emulator.
-    - ./gradlew stacklightinglibrary:connectedAndroidTest
+    - ./gradlew connectedAndroidTest
   post:
     # copy the build outputs to artifacts
     - cp -r stacklightinglibrary/build/outputs $CIRCLE_ARTIFACTS
