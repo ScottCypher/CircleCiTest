@@ -22,6 +22,6 @@ test:
     - ./gradlew connectedAndroidTest
   post:
     # copy the build outputs to artifacts
-    - cp -r stacklightinglibrary/build/outputs $CIRCLE_ARTIFACTS
+    - cp -r CircleCItest/build/outputs $CIRCLE_ARTIFACTS
     # copy the test results to the test results directory.
-    - cp -r stacklightinglibrary/build/outputs/androidTest-results/* $CIRCLE_TEST_REPORTS
+    - cp -r CircleCItest/build/outputs/androidTest-results/* $CIRCLE_TEST_REPORTS
