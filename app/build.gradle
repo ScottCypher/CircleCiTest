@@ -17,6 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        development {
+            //https://discuss.circleci.com/t/android-24-found-1-connected-device-s-0-of-which-were-compatible
+            minSdkVersion 24
+        }
+        production {
+
+        }
+    }
 }
 
 dependencies {
