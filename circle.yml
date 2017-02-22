@@ -27,9 +27,8 @@ dependencies:
     - android list targets
 
 test:
-  pre:
-    - android list avd
   override:
+    - android list avd
     # set up emulator
     - emulator -avd circleci-android24-googleapis -no-window -gpu off:
         background: true
@@ -38,8 +37,8 @@ test:
     - circle-android wait-for-boot
     # run tests against the emulator for only the debug variant (https://developer.android.com/studio/test/command-line.html)
     # disable pre-dexing (https://circleci.com/docs/android/#disable-pre-dexing-to-improve-build-performance)
-    - ./gradlew connecteddevelopmentDebugAndroidTest -PdisablePreDex:
-        timeout: 1200
+    - ./gradlew connecteddevelopmentDebugAndroidTest -PdisablePreDex --console=plain --info:
+        timeout: 1800
   post:
     # copy the build outputs
     - cp -r app/build/outputs $CIRCLE_ARTIFACTS
